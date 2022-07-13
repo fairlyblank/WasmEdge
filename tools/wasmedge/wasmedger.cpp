@@ -219,9 +219,7 @@ int main(int Argc, const char *Argv[]) {
   Conf.addHostRegistration(WasmEdge::HostRegistration::Wasi);
   Conf.addHostRegistration(WasmEdge::HostRegistration::WasmEdge_Process);
   Conf.addHostRegistration(WasmEdge::HostRegistration::WasiNN);
-#ifdef WASMEDGE_BUILD_WASI_CRYPTO
-  Conf.addHostRegistration(WasmEdge::HostRegistration::Wasi_Crypto);
-#endif
+  Conf.addHostRegistration(WasmEdge::HostRegistration::WasiCrypto);
   const auto InputPath = std::filesystem::absolute(SoName.value());
   WasmEdge::VM::VM VM(Conf);
 
